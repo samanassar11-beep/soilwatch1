@@ -1,6 +1,10 @@
 {
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/$1" },
-    { "source": "/(.*)", "destination": "/index.html" }
+  "version": 2,
+  "builds": [
+    { "src": "api/reading.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/reading", "dest": "/api/reading.js" },
+    { "src": "/api/readings", "dest": "/api/reading.js" }
   ]
 }
